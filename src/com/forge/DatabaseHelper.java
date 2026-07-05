@@ -26,5 +26,16 @@ public class DatabaseHelper {
 
         }
         }
+    public static void SaveSnippet(string title,string language,string body){
+        string sql="INSERT INTO snippets(title,language,body) VALUES(?,?,?)";
+        try(Connection conn=connect(); PreparedStatement pstmt=conn.prepareStatement(sql)){
+            pstmt.setString(1,title);
+            pstmt.setString(2,language);
+            pstmt.setString(3,body);
+            pstmt.executeUpdate();
+        } catch (SQLException e){
+            System.err.println("Failed to save snippet:"+e.getMessage());
+
+    }
     }
 }
