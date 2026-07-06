@@ -34,7 +34,7 @@ public class DatabaseHelper {
             pstmt.setString(3,body);
             pstmt.executeUpdate();
         } catch (SQLException e){
-            System.err.println("Failed to save snippet:"+e.getMessage());
+            System.err.println("Failed to save snippet:"+e.getMessage())g
 
     }
     }
